@@ -2,10 +2,16 @@
 
 Laravel Mix のみを利用するためのプロジェクトテンプレート。
 
+参考
+
 - https://qiita.com/saboyutaka/items/8efbb7778993599e52de
 
 
-## Project
+## テンプレートプロジェクトの作成方法
+
+Docker は、自分のいつものやり方。
+
+LaravelMix は、以下のコマンドで取得。
 
 ```
 mkdir -p resources/js/components resources/sass
@@ -28,8 +34,6 @@ cd laravel-mix-template
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm install
 
 docker-compose up -d
-docker exec -it app /bin/bash
-php composer.phar install
 ```
 
 
@@ -53,15 +57,9 @@ CREATE DATABASE photos DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 ```
 
 
-## Test
+## コミット時のコメント
 
-```
-docker exec -it app /bin/bash
-./vendor/bin/phpunit --testdox
-```
-
-
-## Comment
+Angular のコメントルールを参考。
 
  - https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type
 
