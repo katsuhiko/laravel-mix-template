@@ -17,11 +17,26 @@ LaravelMix は、以下のコマンドで取得。
 mkdir -p resources/js/components resources/sass
 curl https://raw.githubusercontent.com/laravel/laravel/master/webpack.mix.js -o ./webpack.mix.js
 curl https://raw.githubusercontent.com/laravel/laravel/master/package.json -o ./package.json
-curl https://raw.githubusercontent.com/laravel/laravel/master/resources/js/components/ExampleComponent.Vue -o ./resources/js/components/ExampleComponent.Vue
+curl https://raw.githubusercontent.com/laravel/laravel/master/resources/js/components/ExampleComponent.vue -o ./resources/js/components/ExampleComponent.vue
 curl https://raw.githubusercontent.com/laravel/laravel/master/resources/js/app.js -o ./resources/js/app.js
 curl https://raw.githubusercontent.com/laravel/laravel/master/resources/js/bootstrap.js -o ./resources/js/bootstrap.js
 curl https://raw.githubusercontent.com/laravel/laravel/master/resources/sass/app.scss -o ./resources/sass/app.scss
 curl https://raw.githubusercontent.com/laravel/laravel/master/resources/sass/_variables.scss -o ./resources/sass/_variables.scss
+```
+
+ライブラリのインストール。
+
+```
+docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm install
+```
+
+StoryBook の導入。
+
+```
+docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/vue
+docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-actions
+docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-notes
+docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-storyshots
 ```
 
 

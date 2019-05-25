@@ -55,3 +55,15 @@ services:
     networks:
       - frontend
       - backend
+  story:
+    image: node:8.12
+    container_name: story
+    ports:
+      - 9001:9001
+    working_dir: /home/app
+    command: "npm run storybook"
+    volumes:
+      - ./:/home/app
+    networks:
+      - frontend
+      - backend
