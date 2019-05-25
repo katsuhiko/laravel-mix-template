@@ -47,7 +47,7 @@ services:
       - backend
   watch:
     image: node:8.12
-    container_name: devjs
+    container_name: watch
     working_dir: /home/app
     command: "npm run watch"
     volumes:
