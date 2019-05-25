@@ -13,4 +13,4 @@ yarn-error.log
 # ADD
 /public/js/app.js
 /public/css/app.css
-/public/mix-manifest.json
+mix-manifest.json
