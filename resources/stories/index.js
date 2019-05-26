@@ -22,9 +22,9 @@ storiesOf('balloon-el', module)
     template: `<balloon-el :style="{ position: 'absolute', top: '200px', left: '200px' }">左上から 200px に配置</balloon-el>`
   }))
 
-  import ImgEl from './../js/components/atoms/ImgEl.vue'
-  storiesOf('img-el', module)
-    .add('デフォルト', () => ({
-      components: { ImgEl },
-      template: `<img-el src="/mock/images/img01.jpg" width="128" height="72" />`
-    }))
+import ImgEl from './../js/components/atoms/ImgEl.vue'
+storiesOf('img-el', module)
+  .add('デフォルト', () => ({
+    components: { ImgEl },
+    template: `<img-el src="/mock/images/img01.jpg" width="128" height="72" />`
+  }))
