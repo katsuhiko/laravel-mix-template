@@ -37,6 +37,7 @@ docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybo
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-actions
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-notes
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-storyshots
+docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-viewport
 ```
 
 
