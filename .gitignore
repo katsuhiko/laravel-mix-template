@@ -11,6 +11,9 @@ npm-debug.log
 yarn-error.log
 
 # ADD
+.DS_Store
+
+# ADD
 /public/js/app.js
 /public/css/app.css
 mix-manifest.json
