@@ -12,4 +12,22 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .webpackConfig({
+      module: {
+        rules: [
+          {
+            test: /\.css$/,
+            loaders: [
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  localIdentName: '[local]_[hash:base64:8]',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    });
