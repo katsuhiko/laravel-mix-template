@@ -1,8 +1,8 @@
 <template>
-  <span class="balloon"><slot></slot></span>
+  <span :class="$style.balloon"><slot></slot></span>
 </template>
 
-<style scoped>
+<style module>
 .balloon {
   background-color: #1a1a1a;
   border-radius: 2px;
