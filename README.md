@@ -34,6 +34,8 @@ StoryBook の導入。
 
 ```
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/vue
+docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D babel-preset-vue
+
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-actions
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-notes
 docker run --rm -it -v $(pwd):/home/app -w /home/app node:8.12 npm i -D @storybook/addon-storyshots
