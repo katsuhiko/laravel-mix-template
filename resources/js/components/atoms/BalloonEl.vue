@@ -1,5 +1,5 @@
 <template>
-  <span :class="$style.balloon"><slot></slot></span>
+  <span :class="$style.balloon"><slot /></span>
 </template>
 
 <style module>
