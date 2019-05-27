@@ -1,21 +1,11 @@
 <template>
-  <component :is="tagName" :class="className"><slot /></component>
+  <component :is="container" v-bind="params"><slot /></component>
 </template>
 
-<style module>
-.heading {
-  font-weight: 700;
-  line-height: 1.5;
-}
-.heading1 { font-size: 2.0rem; }
-.heading2 { font-size: 1.8rem; }
-.heading3 { font-size: 1.6rem; }
-.heading4 { font-size: 1.4rem; }
-.heading5 { font-size: 1.2rem; }
-.heading6 { font-size: 1.0rem; }
-</style>
-
 <script>
+import HeadingContainer from './HeadingContainer.vue'
+import HeadingPresenter from './HeadingPresenter.vue'
+
 export default {
   props: {
     level: {
@@ -27,18 +17,20 @@ export default {
       default: null
     }
   },
+  components: {
+    HeadingContainer,
+    HeadingPresenter
+  },
   computed: {
-    tagLevel() {
-      return Math.max(1, Math.min(6, this.level))
+    container() {
+      return HeadingContainer
     },
-    tagVisualLevel() {
-      return (this.visualLevel !== null) ? this.visualLevel : this.tagLevel;
-    },
-    tagName() {
-      return `h${ this.tagLevel }`
-    },
-    className() {
-      return [this.$style.heading, this.$style[`heading${ this.tagVisualLevel }`]]
+    params() {
+      return {
+        presenter: HeadingPresenter,
+        level: this.level,
+        visualLevel: this.visualLevel
+      }
     }
   }
 }
