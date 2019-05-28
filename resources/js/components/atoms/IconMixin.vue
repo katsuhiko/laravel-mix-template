@@ -27,10 +27,6 @@ export default {
       presenter: IconPresenter
     }
   },
-  components: {
-    IconContainer,
-    IconPresenter
-  },
   computed: {
     params() {
       return {

@@ -17,17 +17,16 @@ export default {
       default: null
     }
   },
-  components: {
-    HeadingContainer,
-    HeadingPresenter
+  data() {
+    return {
+      container: HeadingContainer,
+      presenter: HeadingPresenter
+    }
   },
   computed: {
-    container() {
-      return HeadingContainer
-    },
     params() {
       return {
-        presenter: HeadingPresenter,
+        presenter: this.presenter,
         level: this.level,
         visualLevel: this.visualLevel
       }
