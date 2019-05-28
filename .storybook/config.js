@@ -1,9 +1,9 @@
-import { configure } from '@storybook/vue'
+import { configure } from '@storybook/vue';
 
-import Vue from 'vue'
-
-function loadStories () {
-  require('./../resources/stories')
+// automatically import all files ending in *.stories.js
+const req = require.context('./../resources/js', true, /.stories.js$/);
+function loadStories() {
+  req.keys().forEach(filename => req(filename));
 }
 
-configure(loadStories, module)
+configure(loadStories, module);
