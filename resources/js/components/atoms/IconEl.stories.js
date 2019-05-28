@@ -7,6 +7,18 @@ storiesOf('icon-el', module)
     components: { IconEl },
     template: `<icon-el icon="trash-can" />`
   }))
+  .add('ChevronRightIcon', () => ({
+    components: { IconEl },
+    template: `<icon-el icon="chevron-right" />`
+  }))
+  .add('SearchIcon', () => ({
+    components: { IconEl },
+    template: `<icon-el icon="search" />`
+  }))
+  .add('SettingsIcon', () => ({
+    components: { IconEl },
+    template: `<icon-el icon="settings" />`
+  }))
   .add('クリッカブル', () => ({
     components: { IconEl },
     template: `<icon-el icon="trash-can" :on-click="action" />`,

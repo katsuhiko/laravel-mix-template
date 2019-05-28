@@ -1,14 +1,11 @@
 <template>
-  <img :src="tagSrc" alt="" :height="height" :width="width" :class="className" @click="tagOnClick" />
+  <component :is="container" v-bind="params"><slot /></component>
 </template>
 
-<style module>
-.clickable {
-  cursor: pointer;
-}
-</style>
-
 <script>
+import IconContainer from './IconContainer.vue'
+import IconPresenter from './IconPresenter.vue'
+
 export default {
   props: {
     icon: {
@@ -24,30 +21,26 @@ export default {
       default: 20
     },
     onClick: {
-      type: Function,
-      default: null
+      type: Function
     }
   },
-  data() {
-    return {
-      className: ''
-    }
-  },
-  created() {
-    if (this.onClick !== null) {
-      this.className = this.$style.clickable
-    }
+  components: {
+    IconContainer,
+    IconPresenter
   },
   computed: {
-    tagSrc() {
-      return `/icons/${ this.icon }.svg`
+    container() {
+      return IconContainer
     },
-    tagOnClick() {
-      if (this.onClick === null) {
-        return function() { return false }
+    params() {
+      return {
+        presenter: IconPresenter,
+        icon: this.icon,
+        height: this.height,
+        width: this.width,
+        onClick: this.onClick
       }
-      return this.onClick
-    },
+    }
   }
 }
 </script>
