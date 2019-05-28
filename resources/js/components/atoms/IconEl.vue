@@ -1,46 +1,9 @@
-<template>
-  <component :is="container" v-bind="params"><slot /></component>
-</template>
-
 <script>
-import IconContainer from './IconContainer.vue'
-import IconPresenter from './IconPresenter.vue'
+import iconFactory from './IconFactory.js'
 
-export default {
-  props: {
-    icon: {
-      type: String,
-      required: true
-    },
-    height: {
-      type: Number,
-      default: 20
-    },
-    width: {
-      type: Number,
-      default: 20
-    },
-    onClick: {
-      type: Function
-    }
-  },
-  components: {
-    IconContainer,
-    IconPresenter
-  },
-  computed: {
-    container() {
-      return IconContainer
-    },
-    params() {
-      return {
-        presenter: IconPresenter,
-        icon: this.icon,
-        height: this.height,
-        width: this.width,
-        onClick: this.onClick
-      }
-    }
-  }
-}
+export default {}
+export const TrashCanIconEl = iconFactory('trash-can')
+export const ChevronRightIconEl = iconFactory('chevron-right')
+export const SearchIconEl = iconFactory('search')
+export const SettingsIconEl = iconFactory('settings')
 </script>

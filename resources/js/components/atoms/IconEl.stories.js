@@ -1,34 +1,26 @@
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
-import IconEl from './IconEl.vue'
-import IconTrashCanEl from './IconTrashCanEl.vue'
-import IconChevronRightEl from './IconChevronRightEl.vue'
-import IconSearchEl from './IconSearchEl.vue'
-import IconSettingsEl from './IconSettingsEl.vue'
+import { TrashCanIconEl, ChevronRightIconEl, SearchIconEl, SettingsIconEl } from './IconEl.vue'
 
 storiesOf('icon-el', module)
   .add('TrashCanIcon', () => ({
-    components: { IconTrashCanEl },
-    template: `<icon-trash-can-el />`
+    components: { TrashCanIconEl },
+    template: `<trash-can-icon-el />`
   }))
   .add('ChevronRightIcon', () => ({
-    components: { IconChevronRightEl },
-    template: `<icon-chevron-right-el />`
+    components: { ChevronRightIconEl },
+    template: `<chevron-right-icon-el />`
   }))
   .add('SearchIcon', () => ({
-    components: { IconSearchEl },
-    template: `<icon-search-el />`
+    components: { SearchIconEl },
+    template: `<search-icon-el />`
   }))
   .add('SettingsIcon', () => ({
-    components: { IconSettingsEl },
-    template: `<icon-settings-el />`
+    components: { SettingsIconEl },
+    template: `<settings-icon-el />`
   }))
   .add('クリッカブル', () => ({
-    components: { IconTrashCanEl },
-    template: `<icon-trash-can-el :on-click="action" />`,
+    components: { TrashCanIconEl },
+    template: `<trash-can-icon-el :on-click="action" />`,
     methods: { action: action('アイコンがクリックされました。') }
-  }))
-  .add('汎用Icon', () => ({
-    components: { IconEl },
-    template: `<icon-el icon='trash-can' />`
   }))
